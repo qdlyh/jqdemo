@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="script/jquery-3.1.1.js"></script>
+	<style type="text/css">
+		#pane1,#pane2,#p3,#p4{
+			position: relative;
+			width: 100px;
+			height: 100px;
+			border: 1px solid #005000;
+			background: #96e555;
+			cursor: pointer;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$("#pane1").click(function(){
+				$(this).animate({left:"500",height:"300",width:"400"},3000);
+			})
+		});
+		$(function(){
+			$("#pane2").css("opacity","0.5");  //设置不透明度
+			$("#pane2").click(function(){
+		        $(this).animate({left:"500",height:"300",opacity:"1"},3000)
+		        //动画向右移动500PX，变高300PX;透明度变回1,3秒完成动画
+		        .animate({top:"200",width:"200px"},3000)
+		        //动画第二部向上移动200px，变宽200px，3秒完成
+		        .fadeOut(1000);  //到终点一秒内隐藏
+			})
+		})
+
+	  $(function(){
+        $("#p3").css("opacity", "0.3");//设置不透明度
+        $("#p3").click(function(){
+              $(this).animate({left: "400px", height:"200px" ,opacity: "1"}, 3000)
+					 .animate({top: "200px" , width :"200px"}, 3000 )
+					 .css("border","5px solid blue");
+					 //不排队执行css
+        });
+    });
+
+
+	    $(function(){
+        $("#p4").css("opacity", "0.3");//设置不透明度
+        $("#p4").click(function(){
+              $(this).animate({left: "400px", height:"200px" ,opacity: "1"}, 3000)
+					 .animate({top: "200px" , width :"200px"}, 3000
+					 	,function(){
+					 $(this).css("border","5px solid blue");
+					 })
+					 //排队执行css
+        });
+    });
+
+
+	
+	</script>
+</head>
+<body>
+<div id="pane1"></div>
+<div id="pane2"></div>
+<div id="p3"></div>
+<div id="p4"></div>
+</body>
+</html>

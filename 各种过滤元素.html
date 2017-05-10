@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="script/jquery-3.1.1.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		//基本选择器5个例子
+    $("#one").css("background","#bbffaa");
+    //设置所有Id为ONE的元素背景颜色为#bbffaa
+    $(".mini").css("background","#bbffaa");
+    //设置所有class为mini的元素背景颜色为#bbffaa
+	$("div").css("background","#bbffaa");
+	//设置所有div的元素背景颜色为#bbffaa
+	$("*").css("background","#bbffaa");
+	//设置所有元素背景颜色为#bbffaa
+	$("span,#two").css("background","#bbffaa")
+	//设置所有span元素和Id为two的元素背景颜色为#bbffaa
+
+	  //层次选择器5个例子
+	$("body div").css("background","#bbffaa");
+	//设置body里面所有div的背景颜色为#bbffaa
+	$("body > div").css("background","#bbffaa");
+	//设置body里面子元素div的背景颜色为#bbffaa。(不是所有)
+	$(".one + div").css("background","#bbffaa");
+	//设置class为one下个同辈div元素的背景颜色为#bbffaa
+	$("#two ~ div").css("background","#bbffaa");
+	//设置id为two后面所有所有同辈div的背景颜色为#bbffaa
+	$("#two").siblings("div").css("background","#bbffaa");
+	//设置two所有同辈的div元素(不分前后，sibling属性)
+       
+
+        //基本过滤选择器11个例子
+	$("div:first").css("background","#bbffaa");
+	//设置div里面的第一个元素:first
+	$("div:last").css("background","#bbffaa");
+	//设置div里面的最后一个元素:last
+	$("div:not(.one)").css("background","#bbffaa");
+	//设置div为class不是one的元素:not()
+	$("div:even").css("background","#bbffaa");
+    //设置div元素索引值为偶数:even
+    $("div:odd").css("background","#bbffaa");
+    //设置div元素索引值为奇数:odd
+    $("div:eq(3)").css("background","#bbffaa");
+    //设置div元素索引值等于3:eq()
+    $("div:gt(3)").css("background","#bbffaa");
+    //设置div元素索引值大于3:gt()
+    $("div:lt(3)").css("background","#bbffaa");
+    //设置div元素索引值小于3:lt()
+    $(":header").css("background","#bbffaa");
+    //设置所有标题(h1,h2,h3...这些元素):header
+    $(":animated").css("background","#bbffaa");
+    //设置当前正在执行动画的元素:animated
+    $(":focus").css("background","#bbffaa");
+    //设置当前获得焦点的元素:focus
+      
+
+      //内容过滤选择器4个例子
+    $("div:contains(di)").css("background","#bbffaa");
+    //设置所有div含有文本di的元素:contains
+    $("div:empty").css("background","#bbffaa");
+    //设置所有div不包含子元素和文本元素的空元素:empty
+    $("div:has('.mini')").css("background","#bbffaa");
+    //设置所有div含class为mini的元素:has
+    $("div:parent").css("background","#bbffaa");
+    //设置所有div含有子元素和文本元素:parent
+
+
+        //可见性过滤选择器例子
+     $("div:visible").css("background","#bbffaa");
+     //设置div所有可见元素:visible
+     $("div:hidden").show(3000);
+     //设置div显示隐藏了的元素  show为JQ方法,元素全部显示出来为3秒
+
+
+          //熟悉过滤选择器例子
+     $("div[title]").css("background","#bbffaa"); 
+     //设置div含有属性title的元素
+     $("div[title = test]").css("background","#bbffaa");
+     //设置div里属性title等于test的元素
+     $("div[title != test]").css("background","#bbffaa");
+     //设置div里属性title不等于test的元素
+     $("div[title ^= te]").css("background","#bbffaa");
+     //设置div里属性title值以te开始的元素
+     $("div[title $= est]").css("background","#bbffaa");
+     //设置div里属性title值以est结束的元素
+     $("div[title *= es]").css("background","#bbffaa");
+     //设置div改变属性title值含有es的元素
+     $("div[id][title *= es]").css("background","#bbffaa");
+      //设置div改变属性id并且属性title值含有 es的元素
+
+         //子元素过滤选择器
+     $("div.one:nth-child(2)").css("background","#bbffaa");
+     //设置每个父元素div里class为one下第二个元素:nth-child()
+     $("div.one:first-child").css("background","#bbffaa");
+     //设置每个父元素div里class为one的第一个子元素:first-child
+     $("div.one:last-child").css("background","#bbffaa");
+     //设置每个父元素div里class为one的最后一个子元素:last-child
+     $("div.one:only-child").css("background","#bbffaa");
+     //设置每个父元素div里class为one里面唯一的子元素
+
+
+
+    });
+
+	</script>
+</head>
+<body>
+<div class="one" id="one" >
+	id为one,class为one的div
+	<div class="mini">class为mini</div>
+</div>
+
+<div class="one"  id="two" title="test" >
+	id为two,class为one,title为test的div.
+	<div class="mini"  title="other">class为mini,title为other</div>
+	<div class="mini"  title="test">class为mini,title为test</div>
+</div>
+
+<div class="one">
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini"></div>
+</div>
+
+<div class="one">
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini">class为mini</div>
+	<div class="mini"  title="tesst">class为mini,title为tesst</div>
+</div>
+
+
+<div style="display:none;"  class="none">
+	style的display为"none"的div
+</div>
+
+<div class="hide">class为"hide"的div</div>
+
+<div>
+	包含input的type为"hidden"的div<input type="hidden" size="8"/>
+</div>
+
+<span id="mover">正在执行动画的span元素.</span>
+
+</body>
+</html>

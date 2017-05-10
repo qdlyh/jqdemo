@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="script/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+//DOM方式判断复选框是否被选中！
+$(function(){                    //等待DOM元素加载完毕
+   var $cr =$("#cr");             //获取jq对象
+   var cr = $cr[0];              //转换成DOM对象，或者用$cr.get(0)转换
+   $cr.click(function(){           //cr点击事件触发的时候
+       if(cr.checked){           //DOM方式判断是否选中了按钮
+         alert("123");           
+       }
+   })
+});
+
+//jQuery方式判断是否被选中！
+$(document).ready(function(){        //等待DOM元素加载完毕
+	var $cr2 =$("#cr2");               //获取jq对象
+	$cr2.click(function(){             //cr点击事件触发的时候
+		if($cr2.is(":checked")){        //JQ方式判断是否选中了按钮
+            alert("321")     
+              //注意is(":checked")是JQ中的方法，判断JQ对象是否被选中，返回boolean值
+		}
+	});
+});
+
+
+
+</script>
+	<title></title>
+</head>
+<body>
+<input type="checkbox" id="cr"/> <label for="cr">我已经阅读了上面制度.</label>
+<input type="checkbox" id="cr2"/> <label for="cr2">我已经阅读了上面制度.</label>
+<p class="demo">123</p>
+<script type="text/javascript">
+  $(".demo").click(function(){     //给P标签添加点击事件
+  alert("1234");               
+});
+
+</script>
+</body>
+</html>
