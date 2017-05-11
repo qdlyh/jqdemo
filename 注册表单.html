@@ -39,7 +39,7 @@ form div { margin:5px 0;}
 			 if( $(this).is('#username') ){
 					if( this.value=="" || this.value.length < 6 ){
 					    var errorMsg = '请输入至少6位的用户名.';
-                        $parent.append('<span class="formtips onError">'+errorMsg+'</span>');
+                                            $parent.append('<span class="formtips onError">'+errorMsg+'</span>');
 					}else{
 					    var okMsg = '输入正确.';
 					    $parent.append('<span class="formtips onSuccess">'+okMsg+'</span>');
